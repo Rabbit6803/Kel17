@@ -1,0 +1,11 @@
+Code smell unfactored hierarchy disebabkan ketika terjadinya nesting yang berlebihan atau mungkin tingkat hierarchy yang terlalu dalam di dalam code tersebut sehingga menjadi sulit untuk dimengerti dan dimantain. Pada code ini, method traverseHierarchy secara rekursif travers hierarki karyawan, tetapi logika indentasi diulang dalam method tersebut menyebabkan duplikasi kode.
+
+Pada code yang sudah diperbaiki, method traverseHierarchy di-overload dengan method public yang hanya menerima karyawan root sebagai argumen. Method public ini memanggil private helpere method dengan parameter level tambahan untuk indentasi.
+
+Logika indentasi dipindahkan ke baris terpisah menggunakan method repeat yang mengulang karakter spasi sebanyak level kali.
+
+Dengan memisahkan logika indentasi, kita menghilangkan duplikasi kode dan membuat kode menjadi lebih bersih dan mudah dipelihara.
+
+
+
+
