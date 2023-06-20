@@ -1,0 +1,11 @@
+Code smell Speculative Hierarchy terjadi ketika terdapat abstract class dalam hierarchy yang tidak memberikan fungsionalitas atau perilaku tambahan selain yang sudah didefinisikan dalam interface yang mereka implementasikan. Pada kode ini, baik Mammal maupun Reptile adalah abstract class yang memperluas interface Animal namun tidak menambahkan method atau fungsionalitas baru. Hal ini dapat menyebabkan kompleksitas dan kebingungan yang tidak perlu.
+
+Untuk mengatasi code smell ini, kita dapat menghapus abstract class yang tidak diperlukan dan langsung mengimplementasikan interface Animal dalam class Dog dan Snake.
+
+Pada code yang sudah diperbaiki, abstract class Mammal dan Reptile dihapus, dan class Dog dan Snake langsung mengimplementasikan interface Animal. Hal ini menyederhanakan hierarchy dan menghilangkan tingkat abstraksi yang tidak perlu. class Dog dan Snake akan hanya berisi perilaku spesifik dari jenis hewan masing-masing, bersama dengan method eat() dan sleep() yang didefinisikan dalam interface Animal.
+
+Dengan menghilangkan speculative hierarchy, kita membuat kode menjadi lebih sederhana, lebih mudah dipahami, dan mengurangi kompleksitas yang tidak perlu.
+
+
+
+
